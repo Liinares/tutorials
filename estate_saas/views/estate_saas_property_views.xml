@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="estate_saas_property_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">x_estate_saas.property</field>
+        <field name="context">{'search_default_available': True}</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="estate_saas_property_list" model="ir.ui.view">
+        <field name="name">estate.saas.property.list</field>
+        <field name="model">x_estate_saas.property</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="x_name" />
+                <field name="x_bedrooms" />
+                <field name="x_expected_price" />
+                <field name="x_living_area" />
+                <field name="x_garden_orientation" />
+            </list>
+        </field>
+    </record>
+
+    <record id="estate_saas_property_form" model="ir.ui.view">
+        <field name="name">estate.property.form</field>
+        <field name="model">x_estate_saas.property</field>
+        <field name="arch" type="xml">
+            <form string="Estate Property">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="x_name" />
+                        </h1>
+                        <group>
+                            <field name="x_tag_ids" widget="many2many_tags" />
+                        </group>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="x_bedrooms" />
+                            <field name="x_expected_price" />
+                            <field name="x_selling_price" />
+                            <field name="x_date_availability" />
+                            <field name="x_facades" />
+                            <field name="x_partner_id" />
+                            <field name="x_user_id" />
+                        </group>
+                        <group>
+                            <field name="x_garage" />
+                            <field name="x_living_area" />
+                            <field name="x_garden_orientation" />
+                            <field name="x_garden" />
+                            <field name="x_garden_area" />
+                            <field name="x_total_area" />
+                            <field name="x_property_type_id" />
+                        </group>
+
+                    </group>
+                    <notebook>
+                        <page string="Offers" name="offers">
+                            <field name="x_offer_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

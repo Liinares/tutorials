@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="estate_saas_property_menu_root" name="Estate SAAS Properties" />
+
+    <!-- ADVERISEMENTS -->
+    <menuitem
+        id="estate_property_menu_action"
+        name="Properties"
+        action="estate_saas.estate_saas_property_action"
+        parent="estate_saas_property_menu_root" />
+
+    <!-- TYPES -->
+    <menuitem
+        id="estate_property_type_menu_action"
+        name="Property Types"
+        action="estate_saas.estate_saas_property_type_action"
+        parent="estate_saas_property_menu_root" />
+
+    <!-- TAGS -->
+    <menuitem
+        id="estate_property_tag_menu_action"
+        name="Property Tags"
+        action="estate_saas.estate_saas_property_tag_action"
+        parent="estate_saas_property_menu_root" />
+
+</odoo>
