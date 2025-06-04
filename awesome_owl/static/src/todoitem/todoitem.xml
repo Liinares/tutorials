@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t t-name="awesome_owl.todoitem">
+    <div class="d-flex flex-row">
+        <input type="checkbox" t-att-checked="props.item.isCompleted"
+            t-on-change="changeState" class="form-check-input me-2" />
+        <p t-att-class="{'text-muted text-decoration-line-through': props.item.isCompleted}"
+            t-out="props.item.description" />
+            <span class="fa fa-remove" t-on-click="deleteItem"/>
+    </div>
+</t>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t t-name="awesome_owl.todolist">
+    <div class="card d-inline-block m-2" style="width: 18rem;">
+        <input type="text" t-ref="myInput" class="form-control" placeholder="Add a new todo"
+            t-on-keyup="addTodo" />
+        <t t-foreach="todos" t-as="item" t-key="item.id">
+            <TodoItem item="item" toggleState.bind="toggleState" deleteItem.bind="deleteItem" />
+        </t>
+    </div>
+</t>
