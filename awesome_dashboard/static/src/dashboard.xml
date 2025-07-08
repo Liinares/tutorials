@@ -1,8 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
     <t t-name="awesome_dashboard.AwesomeDashboard">
-        hello dashboard
+            <Layout className="'o_dashboard h-100'" display="{ controlPanel: {} }">
+                <t t-set-slot="layout-buttons">
+                    <button class="btn btn-primary" t-on-click="openCustomerView">Customers</button>
+                    <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
+                </t>
+                <t t-set-slot="control-panel-additional-actions">
+                    <button t-on-click="openConfiguration" class="btn p-0 ms-1 border-0">
+                        <i class="fa fa-cog"></i>
+                    </button>
+                </t>
+                <div class="d-flex flex-wrap">
+                    <DashboardItem size="2">hola</DashboardItem>
+                    <DashboardItem>sin size</DashboardItem>
+                    <DashboardItem size="2">hola</DashboardItem>
+                </div>
+            </Layout>
     </t>
 
 </templates>
