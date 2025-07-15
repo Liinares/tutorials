@@ -1,0 +1,4 @@
+GET /echo?word=hola2 HTTP/1.1
+Host: localhost
+Cookie: session_id=Z5vzEoct-KuznCu2ANbnHteQABuWF7WnJFCcgpzdqqiJ98oLB9g7Qim-UHbLW9ZK4r8LjDvcfXLtLI08xaTa
+

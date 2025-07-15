@@ -1,0 +1,7 @@
+POST /echo-json HTTP/1.1
+Host: localhost
+Cookie: session_id=lbLP0Lh47DWqfvLcdaxp81bMQlJMfodBDkJPWHIZZVyHtW_0eV36-oKU-LgJ9PzMFlHWGipnP5jXNNBAAUb7
+Content-Type: application/json
+Content-Length: 28
+
+{"custom": "mensajeEjemplo"}
