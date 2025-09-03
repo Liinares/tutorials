@@ -12,10 +12,58 @@
                         <i class="fa fa-cog"></i>
                     </button>
                 </t>
-                <div class="d-flex flex-wrap">
-                    <DashboardItem size="2">hola</DashboardItem>
+                <div class="d-flex flex-wrap gap-3 p-2">
+                    <DashboardItem size="2">hola2</DashboardItem>
                     <DashboardItem>sin size</DashboardItem>
                     <DashboardItem size="2">hola</DashboardItem>
+                    <DashboardItem>
+                        Average amount of t-shirt by order this month
+                        <div class="display-1 text-success w-full text-center">
+                            <t t-esc="items.average_quantity" />
+                        </div>
+                    </DashboardItem>
+                    <DashboardItem>
+                        <t t-set-slot="title">Average amount of money by order this month</t>
+                        <t t-set-slot="value">
+                            <div class="display-1 text-success w-full text-center">
+                                <t t-esc="items.average_time" />
+                            </div>
+                        </t>
+                    </DashboardItem>
+                    <DashboardItem>
+                        Average time for an order to go from 'new' to 'sent' or 'cancelled'
+                        <div class="display-1 text-success w-full text-center">
+                            <t t-esc="items.average_time" />
+                        </div>
+                    </DashboardItem>
+                    <DashboardItem>
+                        Number of new orders this month
+                        <div class="display-1 text-success w-full text-center">
+                            <t t-esc="items.nb_new_orders" />
+                        </div>
+                    </DashboardItem>
+                    <DashboardItem>
+                        Number of cancelled orders this month
+                        <div class="display-1 text-success w-full text-center">
+                            <t t-esc="items.nb_cancelled_orders" />
+                        </div>
+                    </DashboardItem>
+                    <DashboardItem>
+                        Total amount of orders this month
+                        <div class="display-1 text-success w-full text-center">
+                            <t t-esc="items.total_amount" />
+                        </div>
+                    </DashboardItem>
+
+                    <!-- <t t-foreach="Object.entries(items)" t-as="item" t-key="item[0]">
+                        <DashboardItem size="2">
+                            <div><t t-esc="item[0]" /></div>
+                            <div class="display-1 text-success w-full text-center">
+                                <t t-esc="item[1]" />
+                            </div>
+                        </DashboardItem>
+
+                    </t> -->
                 </div>
             </Layout>
     </t>
