@@ -1,4 +1,4 @@
-import { Component, onMounted, onWillStart, useRef, onWillUnmount } from "@odoo/owl";
+import { Component, onMounted, onWillStart, onWillUpdateProps, useRef, onWillUnmount } from "@odoo/owl";
 import { loadJS } from "@web/core/assets";
 
 export class PieChart extends Component {
@@ -14,6 +14,12 @@ export class PieChart extends Component {
         // This will run after the component is mounted in the DOM. This is necessary
         // because Chart.js needs the canvas to be in the DOM to render properly.
         onMounted(() => {
+            this.renderChart();
+        });
+
+        // Re-render the chart if the props change
+        onWillUpdateProps(() => {
+            this.chart.destroy();
             this.renderChart();
         });
 

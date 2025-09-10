@@ -20,15 +20,11 @@ class AwesomeDashboard extends Component {
 
     setup() {
         this.action = useService("action");
-        this.statics = useService("statistics");
-
-        onWillStart(async () => {
-            const result = await this.statics.getStatistics();
-
-            this.items = result;
-            console.log(this.items);
-        });
+        this.statistics = useService("statistics");
+        this.items = useState(this.statistics);
     }
+
+    
 
     openCustomerView() {
         this.action.doAction("base.action_partner_form");
