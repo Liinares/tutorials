@@ -4,10 +4,10 @@ import { Component, onWillStart, useState } from "@odoo/owl";
 
 import { Layout } from "@web/search/layout";
 import { DashboardItem } from "./dashboardItem";
+import { PieChart } from "./graphs/pie_chart";
 
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
-import { rpc } from "@web/core/network/rpc";
 
 class AwesomeDashboard extends Component {
     static template = "awesome_dashboard.AwesomeDashboard";
@@ -15,13 +15,15 @@ class AwesomeDashboard extends Component {
     static components = {
         Layout,
         DashboardItem,
+        PieChart,
     };
 
     setup() {
         this.action = useService("action");
+        this.statics = useService("statistics");
 
         onWillStart(async () => {
-            const result = await rpc("/awesome_dashboard/statistics");
+            const result = await this.statics.getStatistics();
 
             this.items = result;
             console.log(this.items);

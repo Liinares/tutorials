@@ -9,5 +9,6 @@ export class DashboardItem extends Component {
             default: 1,
             optional: true,
         },
+        slots: { type: Object, optional: true },
     };
 }
