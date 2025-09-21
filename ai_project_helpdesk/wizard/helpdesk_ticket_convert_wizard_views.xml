@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="helpdesk_ticket_convert_to_task_wizard_view_form_inherit_ai" model="ir.ui.view">
+    <field name="name">helpdesk.ticket.convert.to.task.wizard.form.inherit.ai</field>
+    <field name="model">helpdesk.ticket.convert.wizard</field>
+    <field name="inherit_id" ref="project_helpdesk.helpdesk_ticket_convert_to_task_wizard_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='project_id']" position="replace">
+        <div class="d-flex w-100">
+          <field name="project_id" required="0" options="{'no_create': 1, 'no_edit': 1, 'no_open': 1}" class="oe_inline"/>
+          <button name="action_auto_assign_project"
+                  type="object"
+                  string="Auto Assign with AI"
+                  class="btn-link fs-2"
+                  icon="fa-magic"
+                  help="Use AI to automatically suggest the most appropriate project"/>
+        </div>
+        <br/>
+      </xpath>
+    </field>
+  </record>
+  
+</odoo>
